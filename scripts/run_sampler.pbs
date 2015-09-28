@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -l walltime=24:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -N sampling_taxa
+#PBS -q tallis
+for t in $(seq 1 50)
+do
+	for k in 10 25 50
+	do
+		python /home/agupta80/astral_wqmc/src/sample_taxa.py /home/agupta80/scratch/model.100.2000000.0.000001 $t $k 101
+	done
+done  

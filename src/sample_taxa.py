@@ -19,7 +19,7 @@ def sample_taxa(path, replicate, k, n):
 
 if __name__ == "__main__":
     model_path=sys.argv[1]
-    replicate=sys.argv[2]
+    replicate=str(int(sys.argv[2])).zfill(2)
     num_taxa_remove=int(sys.argv[3])
     total_taxa = int(sys.argv[4])
     sample_taxa(model_path,replicate,num_taxa_remove,total_taxa)
