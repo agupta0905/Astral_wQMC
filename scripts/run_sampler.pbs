@@ -1,8 +1,9 @@
 #!/bin/bash
-#PBS -l walltime=24:00:00
+#PBS -l walltime=02:00:00
 #PBS -l nodes=1:ppn=1
 #PBS -N sampling_taxa
 #PBS -q tallis
+#PBS -l naccesspolicy=shared
 for t in $(seq 1 50)
 do
 	for k in 10 25 50
