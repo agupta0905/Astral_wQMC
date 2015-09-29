@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -l walltime=24:00:00
+#PBS -l nodes=1
+#PBS -l flags=allprocs
+#PBS -N fasttree_100_11_20
+#PBS -q tallis
+#PBS -l naccesspolicy=shared
+for t in $(seq 11 20)
+do
+	for k in 91 76 51
+	do
+		/home/agupta80/phylogenetics/FastTree -nt -gtr -nopr -gamma -n 1000 /home/agupta80/scratch/model.100.2000000.0.000001/$t"_sampled_"$k/all-genes.phylip > /home/agupta80/scratch/model.100.2000000.0.000001/$t"_sampled_"$k/gene_fasttree.tree & 
+	done
+done  
+wait
