@@ -8,6 +8,6 @@ for t in $(seq 1 50)
 do
 	for k in 10 25 50
 	do
-		python /home/agupta80/astral_wqmc/src/sample_taxa.py /home/agupta80/scratch/model.100.2000000.0.000001 $t $k 101
+		python /Users/agupta/Documents/MS_Thesis/astral_wqmc/src/sample_taxa.py /Users/agupta/Documents/MS_Thesis/astral_wqmc/data/model.100.2000000.0.000001 $t $k 101
 	done
 done  
