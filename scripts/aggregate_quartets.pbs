@@ -103,5 +103,5 @@ t=`printf %02d $PBS_ARRAYID`
 for k in 91 76 51
 do
 	/home/agupta80/astral_wqmc/src/quartet_aggregate.py /home/agupta80/scratch/model.100.2000000.0.000001/$t"_sampled_"$k gene_ _quartets.txt 101 1000 all_quartets.txt
-	echo $t $k $l "Done"  	
+	echo $t $k "Done"  	
 done
