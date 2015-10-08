@@ -28,9 +28,13 @@ def adjust_quartet_weight(dir,filename,prefix,suffix,g,w):
             qlist=get_taxa(line.split(':',1)[0])
             q=format(int(qlist[0]),int(qlist[1]),int(qlist[2]),int(qlist[3]))
             v=int(line.split(':',1)[1].replace('\n',''))*w
-            q_dict_tmp[q]=q_dict_tmp[q]+v-1
+            if q in q_dict_tmp:
+                q_dict_tmp[q]=q_dict_tmp[q]+v-1
         f.close()
-        write(q_dict_tmp,dir+'//'+prefix+str(i)+'_w_'+str(w)+suffix)  
+        sp=''
+        if(len(filename.split('_'))>2):
+            sp='_'+filename.split('_')[2].split('.')[0]
+        write(q_dict_tmp,dir+'//'+prefix+str(i)+'_w_'+str(w)+sp+suffix)  
         print "Gene-",i," Done" 
 if __name__ == "__main__":
     file_dir=sys.argv[1]
