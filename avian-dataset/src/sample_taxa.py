@@ -17,12 +17,12 @@ def sample_helper(truetreefile,estimatedtreefile,s):
     #print tlist
     tt.retain_taxa_with_labels(tlist)
     te.retain_taxa_with_labels(tlist)
-    f = open(truetreefile+'_sampled_'+str(s),'w')
-    f.write(tt.as_string('newick'))
-    f.close()
-    f = open(estimatedtreefile+'_sampled_'+str(s),'w')
-    f.write(te.as_string('newick'))
-    f.close()
+    ft = open(truetreefile+'_sampled_'+str(s),'w')
+    ft.write(tt.as_string('newick'))
+    ft.close()
+    fe = open(estimatedtreefile+'_sampled_'+str(s),'w')
+    fe.write(te.as_string('newick'))
+    fe.close()
 def sample_taxa(path, r, g, s):
     tpath=path+'-true'
     for i in range(1,g+1):

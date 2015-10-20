@@ -1,0 +1,5 @@
+for l in $(seq 1 100)
+do
+	/home/agupta80/phylogenetics/quartets/quartet-controller.sh /home/agupta80/scratch/model.100.2000000.0.000001/$t"_sampled_"$k/gene_"$l"".tree" /home/agupta80/scratch/model.100.2000000.0.000001/$t"_sampled_"$k/gene_"$l""_quartets.txt"
+	echo $t $k $l "Done"  	
+done
