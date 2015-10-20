@@ -12,6 +12,16 @@ def format(i,j,k,l):
         return str(k)+','+str(l)+'|'+str(i)+','+str(j)
     else:
         return str(i)+','+str(j)+'|'+str(k)+','+str(l)
+
+def unique_quartet(line):
+    quartet=line.split(':',1)[0]
+    siblings=quartet.split('|',1)
+    i = int(siblings[0].split(',',1)[0])
+    j = int(siblings[0].split(',',1)[1])
+    k = int(siblings[1].split(',',1)[0])
+    l = int(siblings[1].split(',',1)[1])
+    return format(i,j,k,l)
+
 def write_all_quartets(dt,out_file_path):
     f = open(out_file_path,'w')
     for k in dt.keys():

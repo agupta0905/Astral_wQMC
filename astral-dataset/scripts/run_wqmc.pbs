@@ -105,7 +105,7 @@ do
 	for k in 91 76 51
 	do
 		for l in $(seq 1 1000)
-		do	
+		do		
 			/home/agupta80/maxCutPack/max-cut-tree qrtt=/home/agupta80/scratch/model.100.2000000.0.000001/$t"_sampled_"$k/"gene_"$l"_w_"$w"_quartets.txt" weights=on otre="gene_"$l"_w_"$w"_wqmc.tree"
 			echo $t $k $w $l "Done"  	
 		done

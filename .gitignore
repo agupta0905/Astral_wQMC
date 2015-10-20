@@ -3,3 +3,4 @@ data
 .pydevproject
 .DS_Store
 fasttree
+*pyc
