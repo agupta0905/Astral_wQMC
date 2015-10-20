@@ -17,6 +17,7 @@ def sample_helper(truetreefile,estimatedtreefile,s):
     #print tlist
     tt.retain_taxa_with_labels(tlist)
     te.retain_taxa_with_labels(tlist)
+    #print truetreefile+'_sampled_'+str(s)
     ft = open(truetreefile+'_sampled_'+str(s),'w')
     ft.write(tt.as_string('newick'))
     ft.close()
@@ -26,8 +27,8 @@ def sample_helper(truetreefile,estimatedtreefile,s):
 def sample_taxa(path, r, g, s):
     tpath=path+'-true'
     for i in range(1,g+1):
-        sample_helper(tpath+'/R'+r+'/'+str(g)+'/true.gt',
-            path+'/R'+r+'/'+str(g)+'/raxmlboot.gtrgamma/RAxML_bipartitions.final.f200', s)
+        sample_helper(tpath+'/R'+r+'/'+str(i)+'/true.gt',
+            path+'/R'+r+'/'+str(i)+'/raxmlboot.gtrgamma/RAxML_bipartitions.final.f200', s)
         print i
 if __name__ == "__main__":
     modeldir=sys.argv[1]
