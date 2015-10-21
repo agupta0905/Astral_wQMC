@@ -1,7 +1,7 @@
 __author__ = 'ashu'
 import sys
 def relabel(tdict,qfilepath):
-    outfilepath=qfilepath.split('.',1)[0]+'_relabeled'+qfilepath.split('.',1)[1]
+    outfilepath=qfilepath.rsplit('.',1)[0]+'_relabeled'+qfilepath.rsplit('.',1)[1]
     fin=open(qfilepath,'r')
     fout=open(outfilepath,'w')
     for line in fin:
@@ -27,6 +27,7 @@ def relabeler(mdir,t_dict_path,r,g):
     for i in range(1,g+1):
         for w in [5,10,25,50]:
             relabel(mapping, mdir+'/R'+r+'/'+str(i)+'/quartets_sampled_36_numgenes_100_w_'+str(w)+'.txt')
+        print i
 if __name__ == "__main__":
     modeldir=sys.argv[1]
     taxa_dict_path=sys.argv[2]
