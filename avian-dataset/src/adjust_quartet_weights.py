@@ -1,6 +1,6 @@
 __author__ = 'ashu'
 import sys
-from quartet_aggregate import format
+from quartet_aggregate import formatted
 def write(dict,file):
     f=open(file,'w')
     for k in dict.keys():
@@ -28,7 +28,7 @@ def adjust_quartet_weight(mdir,r,g):
         f=open(mdir+'/R'+r+'/'+str(i)+'/quartets_sampled_36.txt','r')
         for line in f:
             qlist=get_taxa(line.split(':',1)[0])
-            q=format(qlist[0],qlist[1],qlist[2],qlist[3])
+            q=formatted(qlist[0],qlist[1],qlist[2],qlist[3])
             v=int(line.split(':',1)[1].replace('\n',''))
             for idx,weight in enumerate(w):
                 dict_list[idx][q]=dict_list[idx][q]-v+weight*v
