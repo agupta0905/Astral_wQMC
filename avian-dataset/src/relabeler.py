@@ -1,7 +1,7 @@
 __author__ = 'ashu'
 import sys
 def relabel(tdict,qfilepath):
-    outfilepath=qfilepath.rsplit('.',1)[0]+'_relabeled'+qfilepath.rsplit('.',1)[1]
+    outfilepath=qfilepath.rsplit('.',1)[0]+'_relabeled'+'.'+qfilepath.rsplit('.',1)[1]
     fin=open(qfilepath,'r')
     fout=open(outfilepath,'w')
     for line in fin:
