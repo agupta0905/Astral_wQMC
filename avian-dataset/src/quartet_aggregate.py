@@ -39,7 +39,7 @@ def quartet_aggregate(model_dir,r,g):
                 quartet_dict[form_q]=v
         f_in.close()
         print f," Done"
-    write_all_quartets(quartet_dict, model_dir+'/R'+r+'/all_quartets_sampled_36.txt')
+    write_all_quartets(quartet_dict, model_dir+'/R'+r+'/allquartets_sampled_36_numgenes_'+str(g)+'.txt')
     print 'Total Taxa',len(taxon_set)
 if __name__ == "__main__":
     model_dir=sys.argv[1]
