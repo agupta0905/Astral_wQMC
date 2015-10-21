@@ -22,9 +22,10 @@ def adjust_quartet_weight(mdir,r,g):
         q_dict[q]=v
     f.close()
     for i in range(1,g+1):
+        del dict_list
+        dict_list=[]
         for k in range(0,len(w)):
-            del dict_list[k]
-            dict_list[k]=q_dict.copy()
+            dict_list.append(q_dict.copy())
         f=open(mdir+'/R'+r+'/'+str(i)+'/quartets_sampled_36.txt','r')
         for line in f:
             qlist=get_taxa(line.split(':',1)[0])
