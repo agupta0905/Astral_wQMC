@@ -8,7 +8,10 @@ def get_bipartition_dict(tree):
         if (n.is_internal() and (n.parent_node!=None)):
             bipartition=str(n.edge.bipartition)
             if bipartition not in bdict:
-                bdict[bipartition]=float(n.label)
+                if n.label!=None:
+                    bdict[bipartition]=float(n.label)
+                else:
+                    bdict[bipartition]=None
             else:
                 print 'Dublicate',bipartition
     return bdict
