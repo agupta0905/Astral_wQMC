@@ -10,7 +10,7 @@ def relabel(tdict,tfilepath):
         tt.taxon_namespace[i].label=tdict[tt.taxon_namespace[i].label]
     tt.write(path=toutfilepath,schema='newick')
     
-def relabeler_trees(mdir,t_dict_path,r,g):
+def relabeler_trees(mdir,prefix,t_dict_path,r,g):
     mapping={}
     f=open(t_dict_path,'r')
     for line in f:
@@ -19,12 +19,13 @@ def relabeler_trees(mdir,t_dict_path,r,g):
         mapping[key]=value
     f.close()
     for i in range(1,g+1):
-        relabel(mapping, mdir+'/R'+r+'/'+str(i)+'/true.gt')
+        relabel(mapping, mdir+'/R'+r+'/'+str(i)+'/'+prefix)
         print i
 if __name__ == "__main__":
     modeldir=sys.argv[1]
-    taxa_dict_path=sys.argv[2]
-    replicate=sys.argv[3]
-    numgenes=int(sys.argv[4])
-    relabeler_trees(modeldir, taxa_dict_path,replicate, numgenes)    
+    prefix=sys.argv[2]
+    taxa_dict_path=sys.argv[3]
+    replicate=sys.argv[4]
+    numgenes=int(sys.argv[5])
+    relabeler_trees(modeldir, prefix,taxa_dict_path,replicate, numgenes)    
     
