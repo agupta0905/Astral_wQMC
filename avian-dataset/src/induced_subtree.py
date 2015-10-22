@@ -16,6 +16,7 @@ def get_induced_tree(fulltreepath,subtreepath):
             schema='newick')
 def induced_subtrees(mdir,r,numgenes):
     for g in range(1,numgenes+1):
+        print g
         for w in [5,10,25,50]:
             get_induced_tree(
                 mdir+'/R'+r+'/'+str(g)+'/wqmc_sampled_36_numgenes_100_w_'+str(w)+'_relabeled.tree',
