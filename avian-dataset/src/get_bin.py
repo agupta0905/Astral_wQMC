@@ -47,7 +47,8 @@ def update_bin(mdir,r,refbps,bin_taxa,in_bin,out_bin,t):
             bin_taxa=bin_taxa | othbps[1]
 
 def get_bin(mdir,r,gene,numgenes,t):
-    in_bin=set(gene)
+    in_bin=set()
+    in_bin.add(gene)
     out_bin=set(range(1,numgenes+1))
     out_bin.remove(gene)
     reftree=dendropy.Tree.get(
