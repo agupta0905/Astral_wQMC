@@ -37,7 +37,7 @@ def conflict(refbps,othbps,t):
                 return True
     return False
 def update_bin(mdir,r,refbps,bin_taxa,in_bin,out_bin,t):
-    for g in out_bin:
+    for g in out_bin.copy():
         print "Gene",g
         othbps=get_bipartitions(dendropy.Tree.get(
             path=mdir+'/R'+r+'/'+str(g)+'/raxmlboot.gtrgamma/RAxML_bipartitions.final_relabeled.f200_sampled_36',
