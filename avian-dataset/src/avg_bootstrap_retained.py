@@ -37,7 +37,7 @@ def avg_bootstrap_retained(rtpath,otpath):
         print 'mean of empty'
         return 0.0
     else:
-        return mean(l)
+        return (mean(l),len(l))
 if __name__ == "__main__":
     reftreepath=sys.argv[1]
     othertreepath=sys.argv[2]
