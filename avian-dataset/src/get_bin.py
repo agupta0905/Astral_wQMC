@@ -22,6 +22,8 @@ def get_bipartitions(tree):
            bp.append((decode_bipartitions(str(n.edge.bipartition),tree.taxon_namespace.labels()),n.label))
     return (bp,set(tree.taxon_namespace.labels()))
 def bp_conflict(rbp,obp,t):
+    print rbp
+    print obp
     if((int(rbp[2])>t) and (int(obp[2])>t)):
         x1,y1,x2,y2=rbp[0],rbp[1],obp[0],obp[1]
         if(len(x1 & x2) ==0 or len(x1 & y2)==0 or len(y1 & x2)==0 or len(y1 & y2)==0):
@@ -31,6 +33,8 @@ def bp_conflict(rbp,obp,t):
     else:
         return False
 def conflict(refbps,othbps,t):
+    print refbps
+    print othbps
     for rbp in refbps[0]:
         for obp in othbps[0]:
             if(bp_conflict(rbp,obp,t)):
