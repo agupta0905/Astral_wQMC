@@ -35,9 +35,9 @@ def avg_bootstrap_retained(rtpath,otpath):
             l.append(rbdict[b])
     if len(l)==0:
         print 'mean of empty'
-        return 0.0
+        return (0.0,len(l))
     else:
-        return (mean(l),len(l))
+        return (mean(l),len(l)) 
 if __name__ == "__main__":
     reftreepath=sys.argv[1]
     othertreepath=sys.argv[2]
