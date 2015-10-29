@@ -19,7 +19,7 @@ def get_bipartitions(tree):
     bp=[]
     for n in tree.preorder_node_iter():
         if (n.is_internal() and (n.parent_node!=None) and n.label!=None):
-           bp.append(decode_bipartitions(str(n.edge.bipartition),tree.taxon_namespace.labels())+(n.label,))
+            bp.append(decode_bipartitions(str(n.edge.bipartition),tree.taxon_namespace.labels())+(n.label,))
     return (bp,set(tree.taxon_namespace.labels()))
 def bp_conflict(rbp,obp,t):
     if((int(rbp[2])>t) and (int(obp[2])>t)):
@@ -48,6 +48,7 @@ def update_bin(mdir,r,refbps,bin_taxa,in_bin,out_bin,t):
             bin_taxa.update(othbps[1])
 
 def get_bin(mdir,r,gene,numgenes,t):
+    torg=t
     in_bin=set()
     in_bin.add(gene)
     out_bin=set(range(1,numgenes+1))
@@ -63,6 +64,10 @@ def get_bin(mdir,r,gene,numgenes,t):
         print 'updating bin'
         update_bin(mdir,r,refbps,bin_taxa,in_bin,out_bin,t)
     print t,in_bin
+    f=open(mdir+'/R'+r+'/'+str(gene)+'/stat_bin_t_'+str(torg)+'.txt','w')
+    for g in in_bin:
+        f.write(str(g)+'\n')
+    f.close()
 if __name__ == "__main__":
     modeldir=sys.argv[1]
     replicate=sys.argv[2]
