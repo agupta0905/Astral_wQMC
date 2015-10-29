@@ -8,7 +8,7 @@ rlist=map(lambda x: [], range(numgenes))
 def print_resultes(rlist):
     totalval=3*5
     for i in range(totalval):
-        l=[],counts=[]
+        l,counts=[]
         for g in range(numgenes):
             l.append(rlist[g][i][0])
             counts.append(rlist[g][i][1])
