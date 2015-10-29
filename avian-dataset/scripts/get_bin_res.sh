@@ -5,7 +5,7 @@ do
 	do
 		for l in $(seq 1 100)
 		do
-			python /home/agupta80/astral_wqmc/avian-dataset/src/get_bin.py "~/scratch/avian_dataset/avian-"$m"X-1000-500" 1 $l 100 $t
+			python /home/agupta80/astral_wqmc/avian-dataset/src/get_bin.py "/home/agupta80/scratch/avian_dataset/avian-"$m"X-1000-500" 1 $l 100 $t
 			echo $m $t $l "Done"
 		done
 	done
