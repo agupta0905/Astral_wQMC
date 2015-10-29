@@ -38,7 +38,7 @@ def conflict(refbps,othbps,t):
     return False
 def update_bin(mdir,r,refbps,bin_taxa,in_bin,out_bin,t):
     for g in out_bin.copy():
-        print "Gene",g,"Total bin taxa=",len(bin_taxa)
+        #print "Gene",g,"Total bin taxa=",len(bin_taxa)
         othbps=get_bipartitions(dendropy.Tree.get(
             path=mdir+'/R'+r+'/'+str(g)+'/raxmlboot.gtrgamma/RAxML_bipartitions.final_relabeled.f200_sampled_36',
             schema='newick'))
@@ -61,7 +61,7 @@ def get_bin(mdir,r,gene,numgenes,t):
     t-=increment
     while(len(bin_taxa)!=total_taxa):
         t+=increment
-        print 'updating bin'
+        #print 'updating bin'
         update_bin(mdir,r,refbps,bin_taxa,in_bin,out_bin,t)
     print t,in_bin
     f=open(mdir+'/R'+r+'/'+str(gene)+'/stat_bin_t_'+str(torg)+'.txt','w')
