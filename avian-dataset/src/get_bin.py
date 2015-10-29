@@ -45,7 +45,7 @@ def update_bin(mdir,r,refbps,bin_taxa,in_bin,out_bin,t):
         if(not conflict(refbps,othbps,t)):
             in_bin.add(g)
             out_bin.remove(g)
-            bin_taxa=bin_taxa | othbps[1]
+            bin_taxa.update(othbps[1])
 
 def get_bin(mdir,r,gene,numgenes,t):
     in_bin=set()
@@ -60,6 +60,7 @@ def get_bin(mdir,r,gene,numgenes,t):
     t-=increment
     while(len(bin_taxa)!=total_taxa):
         t+=increment
+        print 'updating bin'
         update_bin(mdir,r,refbps,bin_taxa,in_bin,out_bin,t)
     print t,in_bin
 if __name__ == "__main__":
