@@ -16,7 +16,7 @@ def write_all_quartets(dt,out_file_path):
     f.close() 
 def quartet_aggregate(model_dir,r,gene,numgenes,t):
     bin=set()
-    f_bin=open(model_dir+'/R'+r+'/'+str(gene)+'/stat_bin_t_'+str(t)+'.txt','r')
+    f_bin=open(model_dir+'/R'+r+'/'+str(gene)+'/orginal_binning_t_'+str(t)+'.txt','r')
     for line in f_bin:
         bin.add(int(line))
     f_bin.close()
@@ -24,7 +24,7 @@ def quartet_aggregate(model_dir,r,gene,numgenes,t):
     taxon_set=set()
     for f in range(1,numgenes+1):
         if(f in bin):
-            f_in = open(model_dir+'/R'+r+'/'+str(f)+'/quartets_sampled_36.txt','r')
+            f_in = open(model_dir+'/R'+r+'/'+str(f)+'/quartets_relabeled.txt','r')
             for line in f_in:
                 quartet=line.split(':',1)[0]
                 v=int(line.split(':',1)[1])
@@ -44,7 +44,7 @@ def quartet_aggregate(model_dir,r,gene,numgenes,t):
                     quartet_dict[form_q]=v
             f_in.close()
             print f," Done"
-    write_all_quartets(quartet_dict, model_dir+'/R'+r+'/'+str(gene)+'/allbin_t_'+str(t)+'_quartets_sampled_36.txt')
+    write_all_quartets(quartet_dict, model_dir+'/R'+r+'/'+str(gene)+'/allorigbin_t_'+str(t)+'_quartets_relabeled.txt')
     print 'Total Taxa',len(taxon_set)
 if __name__ == "__main__":
     model_dir=sys.argv[1]
