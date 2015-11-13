@@ -1,8 +1,8 @@
 #!/bin/bash
 for l in $(seq 1 100)
 do
-	/home/agupta80/phylogenetics/quartets/quartet-controller.sh ~/scratch/avian_dataset/avian-0.5X-1000-500/R1/$l/raxmlboot.gtrgamma/RAxML_bipartitions.final.f200_sampled_36 ~/scratch/avian_dataset/avian-0.5X-1000-500/R1/$l/quartets_sampled_36.txt
-	/home/agupta80/phylogenetics/quartets/quartet-controller.sh ~/scratch/avian_dataset/avian-1X-1000-500/R1/$l/raxmlboot.gtrgamma/RAxML_bipartitions.final.f200_sampled_36 ~/scratch/avian_dataset/avian-1X-1000-500/R1/$l/quartets_sampled_36.txt
-	/home/agupta80/phylogenetics/quartets/quartet-controller.sh ~/scratch/avian_dataset/avian-2X-1000-500/R1/$l/raxmlboot.gtrgamma/RAxML_bipartitions.final.f200_sampled_36 ~/scratch/avian_dataset/avian-2X-1000-500/R1/$l/quartets_sampled_36.txt
+	/home/agupta80/phylogenetics/quartets/quartet-controller.sh ~/scratch/avian_dataset/avian-0.5X-1000-500/R1/$l/raxmlboot.gtrgamma/RAxML_bipartitions.final_relabeled.f200 ~/scratch/avian_dataset/avian-0.5X-1000-500/R1/$l/quartets_relabeled.txt
+	/home/agupta80/phylogenetics/quartets/quartet-controller.sh ~/scratch/avian_dataset/avian-1X-1000-500/R1/$l/raxmlboot.gtrgamma/RAxML_bipartitions.final_relabeled.f200 ~/scratch/avian_dataset/avian-1X-1000-500/R1/$l/quartets_relabeled.txt
+	/home/agupta80/phylogenetics/quartets/quartet-controller.sh ~/scratch/avian_dataset/avian-2X-1000-500/R1/$l/raxmlboot.gtrgamma/RAxML_bipartitions.final_relabeled.f200 ~/scratch/avian_dataset/avian-2X-1000-500/R1/$l/quartets_relabeled.txt
 	echo $l "Done"  	
 done

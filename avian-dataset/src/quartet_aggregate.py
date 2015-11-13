@@ -19,7 +19,7 @@ def quartet_aggregate(model_dir,r,g):
     quartet_dict={}
     taxon_set=set()
     for f in range(1,g+1):
-        f_in = open(model_dir+'/R'+r+'/'+str(f)+'/quartets_sampled_36.txt','r')
+        f_in = open(model_dir+'/R'+r+'/'+str(f)+'/quartets_relabeled.txt','r')
         for line in f_in:
             quartet=line.split(':',1)[0]
             v=int(line.split(':',1)[1])
@@ -39,7 +39,7 @@ def quartet_aggregate(model_dir,r,g):
                 quartet_dict[form_q]=v
         f_in.close()
         print f," Done"
-    write_all_quartets(quartet_dict, model_dir+'/R'+r+'/allquartets_sampled_36_numgenes_'+str(g)+'.txt')
+    write_all_quartets(quartet_dict, model_dir+'/R'+r+'/allquartets_relabeled_numgenes_'+str(g)+'.txt')
     print 'Total Taxa',len(taxon_set)
 if __name__ == "__main__":
     model_dir=sys.argv[1]
